@@ -1,0 +1,12 @@
+---
+    kind: PersistentVolumeClaim
+    apiVersion: v1
+    metadata:
+      name: sysdig-scap-storage-pvc
+    spec:
+      storageClassName: "nfs"
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 100Mi
