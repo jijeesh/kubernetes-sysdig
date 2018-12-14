@@ -70,7 +70,7 @@ spec:
         #   initialDelaySeconds: 10
         command: [ "sh", "-c"]
         args:
-        - sysdig -G 60 -W 5 -z -w /var/sysdig/$(MY_NODE_NAME)-dump2.scap;
+        - sysdig -G 60 -W 5 -z -w /var/sysdig/$(MY_NODE_NAME)-$(date +%Y%m%d-%H%M%S).scap;
         # - while true; do
         #     echo -en '\n';
         #     printenv MY_NODE_NAME MY_POD_NAME MY_POD_NAMESPACE;
