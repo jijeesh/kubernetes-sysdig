@@ -68,16 +68,16 @@ spec:
         #   exec:
         #     command: [ "sysdig", "-G", "60", "-W", "5","-z", "-w", "/var/sysdig/$(MY_NODE_NAME)-$(date +%Y%m%d-%H%M%S).scap" ]
           # initialDelaySeconds: 10
-        command: [ "sysdig", "-G", "60", "-W", "5","-z", "-w", "/var/sysdig/$(MY_NODE_NAME)-%Y%m%d-%H%M%S.scap" ]
-        # command: [ "sh", "-c"]
-        # args:
+        # command: [ "sysdig", "-G", "60", "-W", "5","-z", "-w", "/var/sysdig/$(MY_NODE_NAME)-%Y%m%d-%H%M%S.scap" ]
+        command: [ "sh", "-c"]
+        args:
         # - sysdig -G 60 -W 5 -z -w /var/sysdig/$(MY_NODE_NAME)-$(date +%Y%m%d-%H%M%S).scap;
-        # - while true; do
-        #     echo -en '\n';
-        #     printenv MY_NODE_NAME MY_POD_NAME MY_POD_NAMESPACE;
-        #     printenv MY_POD_IP MY_POD_SERVICE_ACCOUNT;
-        #     sleep 10;
-        #   done;
+        - while true; do
+            echo -en '\n';
+            printenv MY_NODE_NAME MY_POD_NAME MY_POD_NAMESPACE;
+            printenv MY_POD_IP MY_POD_SERVICE_ACCOUNT;
+            sleep 10;
+          done;
         env:
           - name: MY_NODE_NAME
             valueFrom:
