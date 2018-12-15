@@ -66,11 +66,12 @@ spec:
             memory: 1024Mi
         # readinessProbe:
         #   exec:
-        #     command: [ "sysdig", "-G", "60", "-W", "5","-z", "-w", "/var/sysdig/dump.scap" ]
-        #   initialDelaySeconds: 10
-        command: [ "sh", "-c"]
-        args:
-        - sysdig -G 60 -W 5 -z -w /var/sysdig/$(MY_NODE_NAME)-$(date +%Y%m%d-%H%M%S).scap;
+        #     command: [ "sysdig", "-G", "60", "-W", "5","-z", "-w", "/var/sysdig/$(MY_NODE_NAME)-$(date +%Y%m%d-%H%M%S).scap" ]
+          # initialDelaySeconds: 10
+        command: [ "sysdig", "-G", "60", "-W", "5","-z", "-w", "/var/sysdig/$(MY_NODE_NAME)-%Y%m%d-%H%M%S.scap" ]
+        # command: [ "sh", "-c"]
+        # args:
+        # - sysdig -G 60 -W 5 -z -w /var/sysdig/$(MY_NODE_NAME)-$(date +%Y%m%d-%H%M%S).scap;
         # - while true; do
         #     echo -en '\n';
         #     printenv MY_NODE_NAME MY_POD_NAME MY_POD_NAMESPACE;
