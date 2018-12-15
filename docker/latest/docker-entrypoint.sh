@@ -49,6 +49,7 @@ done
 mount_cgroup_subsys memory
 mount_cgroup_subsys cpuacct
 
+
 /usr/bin/sysdig-probe-loader
 
 exec "$@"
