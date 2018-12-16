@@ -22,10 +22,10 @@ spec:
         emptyDir:
           medium: Memory
       - name: sysdig-scap-storage
-        hostPath:
-          path: /var/sysdig
-        # persistentVolumeClaim:
-        #   claimName: sysdig-scap-storage-pvc
+        # hostPath:
+        #   path: /var/sysdig
+        persistentVolumeClaim:
+          claimName: sysdig-scap-storage-pvc
       - name: docker-sock
         hostPath:
           path: /var/run/docker.sock
@@ -60,14 +60,14 @@ spec:
         imagePullPolicy: Always
         securityContext:
           privileged: true
-        resources:
-          # Resources needed are subjective on the actual workload
-          # please refer to Sysdig Support for more info about it
-          requests:
-            cpu: 100m
-            memory: 512Mi
-          limits:
-            memory: 1024Mi
+        # resources:
+        #   # Resources needed are subjective on the actual workload
+        #   # please refer to Sysdig Support for more info about it
+        #   requests:
+        #     cpu: 100m
+        #     memory: 512Mi
+        #   limits:
+        #     memory: 1024Mi
         # readinessProbe:
         #   exec:
         #     command: [ "sysdig", "-G", "60", "-W", "5","-z", "-w", "/var/sysdig/$(MY_NODE_NAME)-$(date +%Y%m%d-%H%M%S).scap" ]
