@@ -38,9 +38,9 @@ spec:
             - mountPath: /host/var/run/docker.sock
               name: docker-sock
               readOnly: false
-            - mountPath: /host/dev
-              name: dev-vol
-              readOnly: false
+            # - mountPath: /host/dev
+            #   name: dev-vol
+            #   readOnly: false
             # - mountPath: /host/proc
             #   name: proc-vol
             #   readOnly: true
