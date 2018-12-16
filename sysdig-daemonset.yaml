@@ -42,8 +42,9 @@ spec:
       - name: usr-vol
         hostPath:
           path: /usr
-      hostNetwork: true
+      hostNetwork: false
       hostPID: true
+      hostIPC: true
       tolerations:
         - effect: NoSchedule
           key: node-role.kubernetes.io/master
@@ -69,10 +70,10 @@ spec:
         #     command: [ "sysdig", "-G", "60", "-W", "5","-z", "-w", "/var/sysdig/$(MY_NODE_NAME)-$(date +%Y%m%d-%H%M%S).scap" ]
           # initialDelaySeconds: 10
         # command: [ "sysdig", "-G", "60", "-W", "5","-z", "-w", "/var/sysdig/$(MY_NODE_NAME)-%Y%m%d-%H%M%S.scap" ]
-        command: [ "sh", "-c"]
-        args:
+        # command: [ "sh", "-c"]
+        # args:
         # - sysdig -G 60 -W 5 -z -w /var/sysdig/$(MY_NODE_NAME)-$(date +%Y%m%d-%H%M%S).scap;
-        - printenv MY_NODE_NAME MY_POD_NAME MY_POD_NAMESPACE;
+        # - printenv MY_NODE_NAME MY_POD_NAME MY_POD_NAMESPACE;
         # - while true; do
         #     echo -en '\n';
         #     printenv MY_NODE_NAME MY_POD_NAME MY_POD_NAMESPACE;
