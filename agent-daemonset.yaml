@@ -63,9 +63,9 @@ spec:
         # - name: dshm
         #   emptyDir:
         #     medium: Memory
-        - name: sysdig-scap-storage
-          persistentVolumeClaim:
-            claimName: sysdig-scap-storage-pvc
+        # - name: sysdig-scap-storage
+        #   persistentVolumeClaim:
+        #     claimName: sysdig-scap-storage-pvc
         # - name: docker-sock
         #   hostPath:
         #     path: /var/run/docker.sock
