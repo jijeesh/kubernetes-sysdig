@@ -60,18 +60,18 @@ spec:
             - name: run
               mountPath: /var/run/
       volumes:
-        # - name: dshm
-        #   emptyDir:
-        #     medium: Memory
-        # - name: sysdig-scap-storage
-        #   persistentVolumeClaim:
-        #     claimName: sysdig-scap-storage-pvc
-        # - name: docker-sock
-        #   hostPath:
-        #     path: /var/run/docker.sock
-        # - name: dev-vol
-        #   hostPath:
-        #     path: /dev
+        - name: dshm
+          emptyDir:
+            medium: Memory
+        - name: sysdig-scap-storage
+          persistentVolumeClaim:
+            claimName: sysdig-scap-storage-pvc
+        - name: docker-sock
+          hostPath:
+            path: /var/run/docker.sock
+        - name: dev-vol
+          hostPath:
+            path: /dev
         # - name: proc-vol
         #   hostPath:
         #     path: /proc
