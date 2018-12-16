@@ -21,9 +21,9 @@ spec:
       - name: dshm
         emptyDir:
           medium: Memory
-      - name: sysdig-scap-storage
-        persistentVolumeClaim:
-          claimName: sysdig-scap-storage-pvc
+      # - name: sysdig-scap-storage
+      #   persistentVolumeClaim:
+      #     claimName: sysdig-scap-storage-pvc
       - name: docker-sock
         hostPath:
           path: /var/run/docker.sock
@@ -108,8 +108,8 @@ spec:
                 fieldPath: spec.serviceAccountName
 
         volumeMounts:
-        - name: sysdig-scap-storage
-          mountPath: /var/sysdig
+        # - name: sysdig-scap-storage
+        #   mountPath: /var/sysdig
         - mountPath: /host/var/run/docker.sock
           name: docker-sock
           readOnly: false
