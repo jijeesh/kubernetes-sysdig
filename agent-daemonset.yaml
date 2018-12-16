@@ -41,9 +41,9 @@ spec:
             - mountPath: /host/dev
               name: dev-vol
               readOnly: false
-            - mountPath: /host/proc
-              name: proc-vol
-              readOnly: true
+            # - mountPath: /host/proc
+            #   name: proc-vol
+            #   readOnly: true
             # - mountPath: /host/boot
             #   name: boot-vol
             #   readOnly: true
