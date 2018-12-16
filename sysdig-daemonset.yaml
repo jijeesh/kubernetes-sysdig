@@ -53,8 +53,8 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: sysdig
-        # image: sysdig/sysdig
-        image: monitoringartist/dockbix-agent-xxl-limited
+        image: sysdig/sysdig
+        # image: monitoringartist/dockbix-agent-xxl-limited
         imagePullPolicy: Always
         securityContext:
           privileged: true
