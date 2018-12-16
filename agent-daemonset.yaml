@@ -69,9 +69,9 @@ spec:
         - name: docker-sock
           hostPath:
             path: /var/run/docker.sock
-        - name: dev-vol
-          hostPath:
-            path: /dev
+        # - name: dev-vol
+        #   hostPath:
+        #     path: /dev
         # - name: proc-vol
         #   hostPath:
         #     path: /proc
