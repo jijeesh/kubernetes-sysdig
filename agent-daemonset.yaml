@@ -29,7 +29,8 @@ spec:
               value: "zabbix-server"
             - name: ZA_ServerActive
               value: "zabbix-server"
-          image: monitoringartist/dockbix-agent-xxl-limited
+          # image: monitoringartist/dockbix-agent-xxl-limited
+          image: sysdig/sysdig
           name: sysdig
           volumeMounts:
             - name: rootfs
