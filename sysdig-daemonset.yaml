@@ -53,7 +53,8 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: sysdig
-        image: sysdig/sysdig
+        # image: sysdig/sysdig
+        image: monitoringartist/dockbix-agent-xxl-limited
         imagePullPolicy: Always
         securityContext:
           privileged: true
@@ -81,6 +82,10 @@ spec:
         #     sleep 10;
         #   done;
         env:
+          - name: ZA_Server
+            value: "zabbix-server"
+          - name: ZA_ServerActive
+            value: "zabbix-server"
           - name: MY_NODE_NAME
             valueFrom:
               fieldRef:
