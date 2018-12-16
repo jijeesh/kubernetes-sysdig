@@ -112,6 +112,7 @@ spec:
         volumeMounts:
         - name: sysdig-scap-storage
           mountPath: /var/sysdig
+          subPath: sysdig
         - mountPath: /host/var/run/docker.sock
           name: docker-sock
           readOnly: false
