@@ -60,9 +60,9 @@ spec:
             - name: run
               mountPath: /var/run/
       volumes:
-        - name: dshm
-          emptyDir:
-            medium: Memory
+        # - name: dshm
+        #   emptyDir:
+        #     medium: Memory
         - name: sysdig-scap-storage
           persistentVolumeClaim:
             claimName: sysdig-scap-storage-pvc
