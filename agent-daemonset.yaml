@@ -47,14 +47,14 @@ spec:
             - mountPath: /host/boot
               name: boot-vol
               readOnly: true
-            - mountPath: /host/lib/modules
-              name: modules-vol
-              readOnly: true
-            - mountPath: /host/usr
-              name: usr-vol
-              readOnly: true
-            - mountPath: /dev/shm
-              name: dshm
+            # - mountPath: /host/lib/modules
+            #   name: modules-vol
+            #   readOnly: true
+            # - mountPath: /host/usr
+            #   name: usr-vol
+            #   readOnly: true
+            # - mountPath: /dev/shm
+            #   name: dshm
             - name: rootfs
               mountPath: /rootfs
             - name: run
