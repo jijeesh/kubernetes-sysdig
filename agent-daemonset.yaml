@@ -1,4 +1,4 @@
-sysdigapiVersion: extensions/v1beta1
+apiVersion: extensions/v1beta1
 kind: DaemonSet
 metadata:
   name: sysdig-agent-xxl
