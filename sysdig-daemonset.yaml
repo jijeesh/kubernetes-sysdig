@@ -21,9 +21,9 @@ spec:
       - name: dshm
         emptyDir:
           medium: Memory
-      # - name: sysdig-scap-storage
-      #   persistentVolumeClaim:
-      #     claimName: sysdig-scap-storage-pvc
+      - name: sysdig-scap-storage
+        persistentVolumeClaim:
+          claimName: sysdig-scap-storage-pvc
       - name: docker-sock
         hostPath:
           path: /var/run/docker.sock
@@ -73,7 +73,7 @@ spec:
         # command: [ "sysdig", "-G", "60", "-W", "5","-z", "-w", "/var/sysdig/$(MY_NODE_NAME)-%Y%m%d-%H%M%S.scap" ]
         command: [ "sh", "-c"]
         args:
-        - sysdig -G 60 -W 5 -z -w /var/$(MY_NODE_NAME)-$(date +%Y%m%d-%H%M%S).scap;
+        - sysdig -G 60 -W 5 -z -w /var/sysdig/$(MY_NODE_NAME)-$(date +%Y%m%d-%H%M%S).scap;
         # - printenv MY_NODE_NAME MY_POD_NAME MY_POD_NAMESPACE;
         # - while true; do
         #     echo -en '\n';
@@ -108,8 +108,8 @@ spec:
                 fieldPath: spec.serviceAccountName
 
         volumeMounts:
-        # - name: sysdig-scap-storage
-        #   mountPath: /var/sysdig
+        - name: sysdig-scap-storage
+          mountPath: /var/sysdig
         - mountPath: /host/var/run/docker.sock
           name: docker-sock
           readOnly: false
