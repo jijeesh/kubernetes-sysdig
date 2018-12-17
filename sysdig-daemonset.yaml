@@ -25,7 +25,7 @@ spec:
         # hostPath:
         #   path: /var/sysdig
         persistentVolumeClaim:
-          claimName: sysdig-scap-storage-pvc
+          claimName: sysdig-scap-storage-pvc2
       - name: docker-sock
         hostPath:
           path: /var/run/docker.sock
