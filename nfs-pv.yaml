@@ -1,0 +1,16 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: sysdig-scap-storage-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: sysdig-scap
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: wondering-giraffe-nfs-server-provisioner
+    path: "/sysdig/scap"
