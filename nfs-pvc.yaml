@@ -6,7 +6,7 @@
     spec:
       storageClassName: "nfs"
       accessModes:
-        - ReadWriteOnce
+        - ReadWriteMany
       resources:
         requests:
           storage: 2Gi

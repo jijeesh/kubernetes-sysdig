@@ -79,6 +79,7 @@ spec:
         # - printenv MY_NODE_NAME MY_POD_NAME MY_POD_NAMESPACE;
         # - while true; do
         #     echo -en '\n';
+        #     echo "hii- $(date +%Y%m%d-%H%M%S)" >> /var/sysdig/$(MY_NODE_NAME)-$(date +%Y%m%d-%H%M%S).txt;
         #     printenv MY_NODE_NAME MY_POD_NAME MY_POD_NAMESPACE;
         #     printenv MY_POD_IP MY_POD_SERVICE_ACCOUNT;
         #     sleep 10;
