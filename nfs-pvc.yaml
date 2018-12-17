@@ -2,7 +2,7 @@
     kind: PersistentVolumeClaim
     apiVersion: v1
     metadata:
-      name: sysdig-scap-storage-pvc
+      name: sysdig-scap-storage-pvc2
     spec:
       storageClassName: "nfs"
       accessModes:
