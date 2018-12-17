@@ -6,7 +6,7 @@
     spec:
       storageClassName: "rook-ceph-block"
       accessModes:
-        - ReadWriteOnce
+        - ReadWriteMany
       resources:
         requests:
           storage: 5Gi
