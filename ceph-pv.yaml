@@ -12,8 +12,7 @@ spec:
   capacity:
     storage: 5Gi
   claimRef:
-    apiVersion: v1
-    kind: PersistentVolumeClaim
+    name: sysdig-scap-storage-pvc2
   flexVolume:
     driver: ceph.rook.io/rook-ceph-system
     fsType: xfs
