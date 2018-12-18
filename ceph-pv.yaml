@@ -10,7 +10,7 @@ spec:
   accessModes:
   - ReadWriteMany
   capacity:
-    storage: 5Gi
+    storage: 6Gi
   claimRef:
     name: sysdig-scap-storage-pvc2
   flexVolume:
