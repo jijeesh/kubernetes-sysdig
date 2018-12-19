@@ -34,7 +34,7 @@ persistence:
   ##   GKE, AWS & OpenStack)
   ##
   # storageClass: "-"
-  storageClass: "rook-ceph-block"
+  storageClass: "nfs-storage"
 
   accessMode: ReadWriteOnce
   size: 10Gi
