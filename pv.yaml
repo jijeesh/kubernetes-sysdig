@@ -15,5 +15,5 @@ spec:
     # FIXME: replace <Cluster IP> with the current IP of the NFS server pod.
     # Run the below command to get the current IP address:
     # kubectl -n rook-nfs get service -l app=rook-nfs -o jsonpath='{.items[0].spec.clusterIP}'
-    server: <Cluster IP>
-    path: "/<Claim name>"
+    server: 10.233.56.194
+    path: "/sysdig-scap-storage-pvc2"
